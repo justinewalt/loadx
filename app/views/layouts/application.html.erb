@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LoadX</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="root_path">LoadX</a>
+        </div>
+
+          <ul class="nav navbar-nav">
+            <li><a href="path">Home</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <% if haulier_signed_in? %>
+              <li><%= link_to 'Sign Out', destroy_haulier_session_path, method: :delete %></li>
+              <li><%= link_to 'Place Bid', new_shipper_job_path %></li>
+            <% else %>
+            	<li><%= link_to 'Sign In', haulier_session_path %></li>
+              <li><%= link_to 'Sign Up', new_haulier_registration_path %></li>
+            <% end %>
+          </ul>
+      </div>
+    </nav>
+
+    <div class='containter col-sm-10 col-sm-offset-1 col-xs-12'>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
+
+  </body>
+</html>

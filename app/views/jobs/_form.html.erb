@@ -1,0 +1,30 @@
+<%= form_for @job do |f| %>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :details %>
+    <%= f.text_area :details %>
+  </div>
+
+  <div class="field">
+    <%= f.label :special_details %>
+    <%= f.text_field :special_details %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pickup_date %>
+    <%= f.datetime :pickup_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :deliver_date %>
+    <%= f.datetime :deliver_date %>
+  </div>
+
+	<%= f.submit %>
+
+<% end %>
