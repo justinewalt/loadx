@@ -35,16 +35,15 @@ ActiveRecord::Schema.define(version: 20161031065742) do
   end
 
   create_table "employees", force: :cascade do |t|
-    t.string   "first_name", default: "",  null: false
-    t.string   "last_name",  default: "",  null: false
-    t.string   "salutation", default: "",  null: false
+    t.string   "first_name", default: "",    null: false
+    t.string   "last_name",  default: "",    null: false
+    t.string   "salutation", default: "",    null: false
     t.string   "nickname",   default: ""
-    t.string   "email",      default: "",  null: false
-    t.string   "role",       default: "f"
-    t.string   "boolean",    default: "f"
-    t.integer  "phone",                    null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "email",      default: "",    null: false
+    t.boolean  "admin",      default: false
+    t.integer  "phone",                      null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "hauliers", force: :cascade do |t|
@@ -91,10 +90,10 @@ ActiveRecord::Schema.define(version: 20161031065742) do
     t.string   "description",     default: "",    null: false
     t.text     "details",         default: "",    null: false
     t.datetime "pickup_date",                     null: false
-    t.datetime "deliver_date",                    null: false
+    t.datetime "delivery_date",                   null: false
     t.string   "special_details", default: ""
-    t.datetime "delivered"
-    t.boolean  "been_deliverd",   default: false
+    t.datetime "time_delivered"
+    t.boolean  "delivered?",      default: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
   end
@@ -119,7 +118,7 @@ ActiveRecord::Schema.define(version: 20161031065742) do
     t.string   "postal_code",            default: "",         null: false
     t.integer  "office_phone",           default: 0,          null: false
     t.string   "contact_person",         default: "",         null: false
-    t.integer  "tax_id",                 default: 0,          null: false
+    t.integer  "tax_id",                 default: 0
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
     t.index ["email"], name: "index_shippers_on_email", unique: true, using: :btree

@@ -7,7 +7,7 @@ class CreateEmployees < ActiveRecord::Migration[5.0]
       t.string :salutation,    null: false, default: ""
       t.string :nickname,      default: ""
       t.string :email,         null: false, default: ""
-      t.string :role,          :boolean, default: false
+      t.boolean :admin,        default: false
       t.integer :phone,        null: false
 
       t.timestamps
