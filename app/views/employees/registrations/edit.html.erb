@@ -4,8 +4,63 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :CompanyName %>
+    <%= f.text_field :CompanyName, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :StreetAddress %>
+    <%= f.text_field :StreetAddress %>
+  </div>
+
+  <div class="field">
+    <%= f.label :SubDistrict %>
+    <%= f.text_field :SubDistrict %>
+  </div>
+
+  <div class="field">
+    <%= f.label :District %>
+    <%= f.text_field :District %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Province %>
+    <%= f.text_field :Province %>
+  </div>
+
+  <div class="field">
+    <%= f.label :StreetAddress %>
+    <%= f.text_field :StreetAddress %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Country %>
+    <%= f.text_field :Country %>
+  </div>
+
+  <div class="field">
+    <%= f.label :PostalCode %>
+    <%= f.text_field :PostalCode %>
+  </div>
+
+  <div class="field">
+    <%= f.label :OfficePhone %>
+    <%= f.text_field :OfficePhone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ContactPerson %>
+    <%= f.text_field :ContactPerson %>
+  </div>
+
+  <div class="field">
+    <%= f.label :TaxId %>
+    <%= f.text_field :TaxId %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

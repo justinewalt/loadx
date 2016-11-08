@@ -4,8 +4,63 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :company_name %>
+    <%= f.text_field :company_name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :street_address %>
+    <%= f.text_field :street_address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sub_district %>
+    <%= f.text_field :sub_district %>
+  </div>
+
+  <div class="field">
+    <%= f.label :district %>
+    <%= f.text_field :district %>
+  </div>
+
+  <div class="field">
+    <%= f.label :province %>
+    <%= f.text_field :province %>
+  </div>
+
+  <div class="field">
+    <%= f.label :StreetAddress %>
+    <%= f.text_field :StreetAddress %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Country %>
+    <%= f.text_field :Country %>
+  </div>
+
+  <div class="field">
+    <%= f.label :PostalCode %>
+    <%= f.text_field :PostalCode %>
+  </div>
+
+  <div class="field">
+    <%= f.label :OfficePhone %>
+    <%= f.text_field :OfficePhone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ContactPerson %>
+    <%= f.text_field :ContactPerson %>
+  </div>
+
+  <div class="field">
+    <%= f.label :TaxId %>
+    <%= f.text_field :TaxId %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email %>
   </div>
 
   <div class="field">
