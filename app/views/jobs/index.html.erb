@@ -28,6 +28,9 @@
           <li class="list-group-item"><%= job.address.postal_code %></li>
           <li class="list-group-item"><%= link_to 'Edit Pickup or Delivery Dates', edit_job_path(job) %></li>
           <li class="list-group-item"><%= link_to 'Edit Address', jobs_path(@job, @address) %></li>
+        <% if haulier_signed_in? %>
+          <li class="list-group-item"><%= link_to 'Place Bid', bid_path(@job) %></li>
+        <% end %>
         </ul>
       </div>
     <% end %>
