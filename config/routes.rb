@@ -18,12 +18,13 @@ Rails.application.routes.draw do
       }
 
   devise_for :employees, controllers: {
-        sessions: 'shippers/sessions',
-        registrations: 'shippers/registrations'
+        sessions: 'employees/sessions',
+        registrations: 'employees/registrations'
       }
 
   # devise_for :shippers
   # devise_for :hauliers
+  # devise_for :employees
 
   resources :hauliers do
     resources :jobs

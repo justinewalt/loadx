@@ -6,21 +6,15 @@
 
 <div class="btn-group btn-group-justified" role="group">
   <div class="btn-group" role="group">
-    <a href="new_haulier_registration_path">
-      <button type="button" class="btn btn-default">Hauliers Sign Up</button>
-    </a>
+    <button type="button" class="btn btn-default"><%= link_to 'Hauliers Sign Up', new_haulier_registration_path %></button>
   </div>
   <div class="btn-group" role="group">
-    <a href="new_shipper_registration_path">
-      <button type="button" class="btn btn-default">Shippers Sign Up</button>
-    </a>
+    <button type="button" class="btn btn-default"><%= link_to 'Shippers Sign Up', new_shipper_registration_path %></button>
   </div>
 </div>
 <div class="row">
   <h3>Does your company already have an account? Then sign up as an employee for them</h3>
-  <div class="btn-group" role="group">
-    <a href="new_employee_registration_path">
-      <button type="button" class="btn btn-default">Employees Sign Up</button>
-    </a>
+  <div class="btn">
+    <button type="button" class="btn btn-default"><%= link_to 'Employees Sign Up', new_employee_registration_path %></button>
   </div>
 </div>
