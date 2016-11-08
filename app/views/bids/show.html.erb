@@ -1,2 +1,26 @@
-<h1>Bids#show</h1>
-<p>Find me in app/views/bids/show.html.erb</p>
+<div>
+  <h1><%= @bid.amount, @bid.expiration %></h1>
+
+  <% if @bids.any? %>
+
+  <div class='row'>
+
+    <%= @bids.each do |bid| %>
+      <div class="panel panel-success">
+        <div class="panel-heading">Bid Information</div>
+        <div class="panel-body">
+          <p>...</p>
+        </div>
+
+        <ul class="list-group">
+          <li class="list-group-item"><%= bid.amount %></li>
+          <li class="list-group-item"><%= bid.expiration %></li>
+          <li class="list-group-item"><%= link_to 'Edit Bid', bids_path(@bid) %></li>
+        </ul>
+      </div>
+    <% end %>
+      <% else %>
+        <h3>To get started, add an Bid for this Job.</h3>
+      <% end %>
+  </div>
+</div>
