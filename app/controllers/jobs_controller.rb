@@ -3,15 +3,15 @@ class JobsController < ApplicationController
 
   def index
   flash[:success] = "You have been signed in"
-  @jobs = current_user.jobs
+  @jobs = current_shipper.jobs
   end
 
   def new
-    @job = current_user.jobs.new
+    @job = current_shipper.jobs.new
   end
 
   def create
-    @job = current_user.jobs.new(job_params)
+    @job = current_shipper.jobs.new(job_params)
     if @job.save
       redirect_to jobs_path
     else
@@ -44,7 +44,7 @@ class JobsController < ApplicationController
   private
 
     def job_params
-      params.require(:job).permit(:PickupDate, :DeliveryDate, :addresses)
+      params.require(:job).permit(:pickup_date, :delivery_date, :addresses)
     end
 
     def job
