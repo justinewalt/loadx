@@ -4,58 +4,28 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :CompanyName %>
-    <%= f.text_field :CompanyName, autofocus: true %>
+    <%= f.label :salutation, placeholder: 'Mr or Mrs' %>
+    <%= f.text_field :salutation, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :StreetAddress %>
-    <%= f.text_field :StreetAddress %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
   </div>
 
   <div class="field">
-    <%= f.label :SubDistrict %>
-    <%= f.text_field :SubDistrict %>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
   </div>
 
   <div class="field">
-    <%= f.label :District %>
-    <%= f.text_field :District %>
+    <%= f.label :nickname %>
+    <%= f.text_field :nickname %>
   </div>
 
   <div class="field">
-    <%= f.label :Province %>
-    <%= f.text_field :Province %>
-  </div>
-
-  <div class="field">
-    <%= f.label :StreetAddress %>
-    <%= f.text_field :StreetAddress %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Country %>
-    <%= f.text_field :Country %>
-  </div>
-
-  <div class="field">
-    <%= f.label :PostalCode %>
-    <%= f.text_field :PostalCode %>
-  </div>
-
-  <div class="field">
-    <%= f.label :OfficePhone %>
-    <%= f.text_field :OfficePhone %>
-  </div>
-
-  <div class="field">
-    <%= f.label :ContactPerson %>
-    <%= f.text_field :ContactPerson %>
-  </div>
-
-  <div class="field">
-    <%= f.label :TaxId %>
-    <%= f.text_field :TaxId %>
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
   </div>
 
   <div class="field">
