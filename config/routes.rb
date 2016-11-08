@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'jobs/index'
-
-  get 'jobs/show'
-
   root 'home#index'
+
+  # devise_for :hauliers, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}
+  # devise_for :shippers, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}
+  # devise_for :employees, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}
+
 
   devise_for :hauliers, controllers: {
         sessions: 'hauliers/sessions',
@@ -12,6 +13,11 @@ Rails.application.routes.draw do
       }
 
   devise_for :shippers, controllers: {
+        sessions: 'shippers/sessions',
+        registrations: 'shippers/registrations'
+      }
+
+  devise_for :employees, controllers: {
         sessions: 'shippers/sessions',
         registrations: 'shippers/registrations'
       }
