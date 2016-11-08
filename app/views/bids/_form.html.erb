@@ -1,0 +1,15 @@
+<%= form_for @bid do |f| %>
+
+  <div class="field">
+    <%= f.label :amount %>
+    <%= f.text_field :amount, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :expiration %>
+    <%= f.datetime :expiration %>
+  </div>
+
+	<%= f.submit %>
+
+<% end %>
