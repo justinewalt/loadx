@@ -20,7 +20,7 @@ class BidsController < ApplicationController
   end
 
   def show
-    @bids = Bid.all.order('created_at ASC')
+    @jobs = @bids = Bid.all.order('created_at ASC')
   end
 
   def edit
@@ -44,7 +44,7 @@ class BidsController < ApplicationController
   private
 
     def bid_params
-      params.require(:bid).permit(:amount, :expiration)
+      params.require(:bid).permit(:amount, :expiration, :jobs)
     end
 
     def bid
