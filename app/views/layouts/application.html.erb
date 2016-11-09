@@ -19,12 +19,12 @@
             <li><a href="path">Home</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <% if haulier_signed_in? %>
-              <li><%= link_to 'Sign Out', destroy_haulier_session_path, method: :delete %></li>
-              <li><%= link_to 'Place Bid', new_shipper_job_path %></li>
+            <% if shipper_signed_in? %>
+              <li><%= link_to 'Sign Out', destroy_shipper_session_path, method: :delete %></li>
+              <li><%= link_to 'New Job', shippers_index_path %></li>
             <% else %>
-            	<li><%= link_to 'Sign In', haulier_session_path %></li>
-              <li><%= link_to 'Sign Up', new_haulier_registration_path %></li>
+            	<li><%= link_to 'Sign In', shipper_session_path %></li>
+              <li><%= link_to 'Sign Up', new_shipper_registration_path %></li>
             <% end %>
           </ul>
       </div>

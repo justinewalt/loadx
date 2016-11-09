@@ -1,2 +1,41 @@
-<h1>Shippers#index</h1>
-<p>Find me in app/views/shippers/index.html.erb</p>
+<div>
+  <h1>All My Jobs</h1>
+  <hr />
+  <%= button_to 'New Job', shippers_job_create_path, method: :get %>
+  <% if @jobs.any? %>
+
+  <div class='row'>
+
+    <% @jobs.each do |job| %>
+
+      <div class="panel panel-success">
+        <div class="panel-heading"><%= link_to job_path(job) do %> Job Details <% end %></div>
+        <div class="panel-body">
+          <p>...</p>
+        </div>
+
+        <ul class="list-group">
+          <li class="list-group-item"><%= job.description %></li>
+          <li class="list-group-item"><%= job.details %></li>
+          <li class="list-group-item"><%= job.special_details %></li>
+          <li class="list-group-item"><%= job.pickup_date %></li>
+          <li class="list-group-item"><%= job.deliver_date %></li>
+          <li class="list-group-item"><%= job.address.street_address %></li>
+          <li class="list-group-item"><%= job.address.sub_district %></li>
+          <li class="list-group-item"><%= job.address.district %></li>
+          <li class="list-group-item"><%= job.address.province %></li>
+          <li class="list-group-item"><%= job.address.country %></li>
+          <li class="list-group-item"><%= job.address.postal_code %></li>
+          <li class="list-group-item"><%= link_to 'Edit Pickup or Delivery Dates', edit_job_path(job) %></li>
+          <li class="list-group-item"><%= link_to 'Edit Address', jobs_path(@job, @address) %></li>
+        <% if shipper_signed_in? %>
+          <li class="list-group-item"><%= link_to 'Place Bid', bid_path(@job) %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+      <% else %>
+        <h3>To get started, please create a Job.</h3>
+      <% end %>
+  </div>
+</div>

@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     # GET
     get '/jobs', to: 'shippers#jobs_show', as: 'jobs_show'
     get '/shippers', to: 'shippers#index', as: 'shippers_index'
-    get 'shippers/:job_id', to: 'shippers_job#create', as: 'shippers_job_create'
+    get 'make/:make_id/forum/:forum_id/topic/:topic_id', to: 'makes#topic', as: 'topic'
     get 'user/:user_id/profile', to: 'profile#show', as: 'profile'
     get 'profile/:user_id/edit', to: 'profile#edit', as: 'edit_profile'
     get 'user_car/:id', to: 'user_cars#new', as: 'new_user_car'
