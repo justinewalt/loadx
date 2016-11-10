@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161108224537) do
+ActiveRecord::Schema.define(version: 20161031065422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,15 +23,21 @@ ActiveRecord::Schema.define(version: 20161108224537) do
     t.string   "province",       default: "",            null: false
     t.string   "country",        default: "",            null: false
     t.string   "postal_code",    default: "",            null: false
+    t.integer  "job_id"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
+    t.index ["job_id"], name: "index_addresses_on_job_id", using: :btree
   end
 
   create_table "bids", force: :cascade do |t|
     t.float    "amount",     null: false
     t.datetime "expiration", null: false
+    t.integer  "job_id"
+    t.integer  "haulier_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["haulier_id"], name: "index_bids_on_haulier_id", using: :btree
+    t.index ["job_id"], name: "index_bids_on_job_id", using: :btree
   end
 
   create_table "employees", force: :cascade do |t|
@@ -51,6 +57,7 @@ ActiveRecord::Schema.define(version: 20161108224537) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.integer  "company_id"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.index ["email"], name: "index_employees_on_email", unique: true, using: :btree
@@ -75,9 +82,10 @@ ActiveRecord::Schema.define(version: 20161108224537) do
     t.string   "province",               default: "",         null: false
     t.string   "country",                default: "Thailand", null: false
     t.string   "postal_code",            default: "",         null: false
-    t.integer  "office_phone",           default: 0,          null: false
+    t.integer  "office_phone",                                null: false
     t.string   "contact_person",         default: "",         null: false
-    t.integer  "tax_id",                 default: 0,          null: false
+    t.integer  "tax_id",                                      null: false
+    t.boolean  "admin",                  default: true
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
     t.index ["email"], name: "index_hauliers_on_email", unique: true, using: :btree
@@ -93,8 +101,12 @@ ActiveRecord::Schema.define(version: 20161108224537) do
     t.string   "dropoff_content_type"
     t.integer  "dropoff_file_size"
     t.datetime "dropoff_updated_at"
+    t.integer  "employee_id"
+    t.integer  "job_id"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.index ["employee_id"], name: "index_job_pictures_on_employee_id", using: :btree
+    t.index ["job_id"], name: "index_job_pictures_on_job_id", using: :btree
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -105,8 +117,11 @@ ActiveRecord::Schema.define(version: 20161108224537) do
     t.string   "special_details", default: ""
     t.datetime "time_delivered"
     t.boolean  "delivered?",      default: false
+    t.integer  "haulier_id"
+    t.integer  "shipper_id"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
+    t.index ["shipper_id"], name: "index_jobs_on_shipper_id", using: :btree
   end
 
   create_table "shippers", force: :cascade do |t|
@@ -130,6 +145,7 @@ ActiveRecord::Schema.define(version: 20161108224537) do
     t.integer  "office_phone",           default: 0,          null: false
     t.string   "contact_person",         default: "",         null: false
     t.integer  "tax_id",                 default: 0
+    t.boolean  "admin",                  default: true
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
     t.index ["email"], name: "index_shippers_on_email", unique: true, using: :btree

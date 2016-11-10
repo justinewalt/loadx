@@ -4,6 +4,8 @@ class CreateJobPictures < ActiveRecord::Migration[5.0]
       t.attachment :pickup
       t.attachment :dropoff
 
+      t.belongs_to :employee
+      t.belongs_to :job
       t.timestamps
     end
   end

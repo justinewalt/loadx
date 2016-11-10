@@ -10,6 +10,7 @@ class CreateAddresses < ActiveRecord::Migration[5.0]
       t.string :country,         null: false, default: ""
       t.string :postal_code,     null: false, default: ""
 
+      t.belongs_to :job
       t.timestamps
     end
   end

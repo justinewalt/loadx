@@ -36,10 +36,10 @@ class DeviseCreateHauliers < ActiveRecord::Migration[5.0]
       t.string :province,        null: false, default: ""
       t.string :country,         null: false, default: "Thailand"
       t.string :postal_code,     null: false, default: ""
-      t.integer :office_phone,   null: false, default: 0
+      t.integer :office_phone,   null: false, default: ""
       t.string :contact_person,  null: false, default: ""
-      t.integer :tax_id,         null: false, default: 0
-
+      t.integer :tax_id,         null: false, default: ""
+      t.boolean :admin,          default: true
       t.timestamps null: false
     end
 

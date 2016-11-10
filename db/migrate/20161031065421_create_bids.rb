@@ -4,6 +4,8 @@ class CreateBids < ActiveRecord::Migration[5.0]
       t.float :amount,        null: false
       t.datetime :expiration, null: false
 
+      t.belongs_to :job
+      t.belongs_to :haulier
       t.timestamps
     end
   end

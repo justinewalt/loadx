@@ -39,7 +39,7 @@ class DeviseCreateShippers < ActiveRecord::Migration[5.0]
       t.integer :office_phone,   null: false, default: 0
       t.string :contact_person,  null: false, default: ""
       t.integer :tax_id,         default: 0
-
+      t.boolean :admin,          default: true
       t.timestamps null: false
     end
 

@@ -9,7 +9,9 @@ class CreateJobs < ActiveRecord::Migration[5.0]
       t.string :special_details, default: ""
       t.datetime :time_delivered
       t.boolean :delivered?,  default: false
+      t.integer :haulier_id
 
+      t.belongs_to :shipper
       t.timestamps
     end
   end
