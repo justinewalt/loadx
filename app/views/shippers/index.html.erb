@@ -1,7 +1,7 @@
 <div>
   <h1>All My Jobs</h1>
   <hr />
-  <%= button_to 'New Job', shippers_job_create_path, method: :get %>
+  <%= button_to 'New Job', shipper_jobs_path(shipper_id), method: :post %>
   <% if @jobs.any? %>
 
   <div class='row'>

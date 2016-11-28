@@ -13,6 +13,7 @@ gem 'will_paginate-bootstrap'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'paperclip', '~> 5.0.0'
+gem 'cancancan', '~> 1.15.0'
 
 
 group :development, :test do

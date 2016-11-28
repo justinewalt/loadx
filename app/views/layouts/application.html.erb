@@ -21,7 +21,7 @@
           <ul class="nav navbar-nav navbar-right">
             <% if shipper_signed_in? %>
               <li><%= link_to 'Sign Out', destroy_shipper_session_path, method: :delete %></li>
-              <li><%= link_to 'New Job', shippers_index_path %></li>
+              <li><%= link_to 'New Job', shipper_jobs_path %></li>
             <% else %>
             	<li><%= link_to 'Sign In', shipper_session_path %></li>
               <li><%= link_to 'Sign Up', new_shipper_registration_path %></li>
