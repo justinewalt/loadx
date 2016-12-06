@@ -2,20 +2,6 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  devise_for :hauliers, controllers: {
-        sessions: 'hauliers/sessions',
-        registrations: 'hauliers/registrations'
-      }
-
-  devise_for :shippers, controllers: {
-        sessions: 'shippers/sessions',
-        registrations: 'shippers/registrations'
-      }
-
-  devise_for :employees, controllers: {
-        sessions: 'employees/sessions',
-        registrations: 'employees/registrations'
-      }
 
     ## SAMPLE
 
@@ -23,6 +9,10 @@ Rails.application.routes.draw do
     #get         'shippers/:shipper_id/jobs/:id',       to: 'jobs       #    show',          as: 'job'
     resources :shippers do
       resources :jobs
+    end
+
+    resources :hauliers do
+      resources :bids
     end
     # GET
     # get '/jobs', to: 'shippers#jobs_show', as: 'jobs_show'
